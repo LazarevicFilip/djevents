@@ -1,0 +1,27 @@
+(neautorizovan)	http://127.0.0.1/phpSajt2/index.php?page=login	127.0.0.1	14-10-2021 00:11:14	test
+(neautorizovan)	http://127.0.0.1/phpSajt2/index.php?page=register	127.0.0.1	14-10-2021 00:14:57	SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'slave@gmail.com' for key 'email'
+(neautorizovan)	/phpSajt2/models/registration.php	127.0.0.1	14-10-2021 20:02:24	SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'slave@gmail.com' for key 'email'
+(neautorizovan)	/phpSajt2/models/login.php	127.0.0.1	26-10-2021 22:26:33	SQLSTATE[42S22]: Column not found: 1054 Unknown column 'recovory_key' in 'field list'
+(neautorizovan)	/phpSajt2/models/login.php	127.0.0.1	26-10-2021 22:28:27	SQLSTATE[42S22]: Column not found: 1054 Unknown column 'recovory_key' in 'field list'
+(neautorizovan)	/phpSajt2/models/login.php	127.0.0.1	26-10-2021 22:28:39	SQLSTATE[42S22]: Column not found: 1054 Unknown column 'recovory_key' in 'field list'
+(neautorizovan)	/phpSajt2/models/login.php	127.0.0.1	26-10-2021 22:29:54	SQLSTATE[42S22]: Column not found: 1054 Unknown column 'recovory_key' in 'field list'
+(neautorizovan)	/phpSajt2/models/login.php	127.0.0.1	26-10-2021 22:32:02	SQLSTATE[42S22]: Column not found: 1054 Unknown column 'recovory_key' in 'field list'
+(neautorizovan)	/phpSajt2/models/login.php	127.0.0.1	27-10-2021 14:43:50	Mailer Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+(neautorizovan)	/phpSajt2/models/login.php	127.0.0.1	27-10-2021 14:49:22	Mailer Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+(neautorizovan)	/phpSajt2/models/login.php	127.0.0.1	27-10-2021 14:50:54	Mailer Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+(neautorizovan)	/phpSajt2/models/login.php	127.0.0.1	27-10-2021 14:51:53	Mailer Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+(neautorizovan)	/phpSajt2/models/login.php	127.0.0.1	27-10-2021 14:53:00	Mailer Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+(neautorizovan)	/phpSajt2/models/login.php	127.0.0.1	27-10-2021 14:56:55	Mailer Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+(neautorizovan)	/phpSajt2/models/login.php	127.0.0.1	27-10-2021 15:10:08	Mailer Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+(neautorizovan)	/phpSajt2/models/login.php	127.0.0.1	09-11-2021 16:18:32	Mailer Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+(neautorizovan)	/phpSajt2/models/login.php	127.0.0.1	09-11-2021 16:19:45	Mailer Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+(neautorizovan)	/phpSajt2/models/login.php	127.0.0.1	09-11-2021 16:20:06	Mailer Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+(neautorizovan)	/phpSajt2/models/login.php	127.0.0.1	09-11-2021 16:22:41	Mailer Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+(neautorizovan)	/phpSajt2/models/login.php	127.0.0.1	10-11-2021 00:00:43	Mailer Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+pera@gmail.com	/phpSajt2/models/event/insert.php	127.0.0.1	13-12-2021 19:27:28	SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+pera@gmail.com	/phpSajt2/models/event/insert.php	127.0.0.1	13-12-2021 19:30:37	SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+pera@gmail.com	/phpSajt2/models/event/insert.php	127.0.0.1	13-12-2021 19:30:53	SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+pera@gmail.com	/phpSajt2/models/event/insert.php	127.0.0.1	13-12-2021 19:32:05	SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+pera@gmail.com	/phpSajt2/models/event/insert.php	127.0.0.1	13-12-2021 19:35:07	SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+pera@gmail.com	/phpSajt2/models/event/insert.php	127.0.0.1	13-12-2021 19:38:43	SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+pera@gmail.com	/phpSajt2/models/event/insert.php	127.0.0.1	13-12-2021 19:39:59	SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
