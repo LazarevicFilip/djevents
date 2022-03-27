@@ -6,7 +6,7 @@
     ?>
         <div id="cartItems">
             <?php
-            if (isset($_SESSION["cart"])) :
+            if (isset($_SESSION["cart"]) && !empty($_SESSION["cart"])) :
             ?>
                 <?php
                 foreach ($_SESSION["cart"] as $item) :
@@ -32,11 +32,12 @@
                 endforeach;
                 ?>
                 <div class="mt-4 mb-5">
+               <a href="" class="btn btn-purple w-100">Zavrsi kupovinu</a>
                     <!-- <div class="d-flex justify-content-between mb-3 text-white size-small py-2">
                 <p>Dostava</p>
                 <p>+199 RSD</p>
             </div> -->
-                    <a href="" class="btn btn-purple w-100">Zavrsi kupovinu</a>
+                    <!-- <a href="" class="btn btn-purple w-100">Zavrsi kupovinu</a> -->
                 </div>
         </div>
 

@@ -8,7 +8,7 @@ try {
     $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $ex) {
-    logAction(LOG_ERR_FAJL, $exception->getMessage());
+    logAction(LOG_ERR_FAJL, $ex->getMessage());
     echo $ex->getMessage();
 }
 

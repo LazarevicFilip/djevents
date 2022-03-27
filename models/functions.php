@@ -267,7 +267,7 @@ function imgResize($fileName, $tmpFIle)
     if ($result) {
         $cords = getimagesize($path);
         // resize
-        $newWidth = 80;
+        $newWidth = 140;
         $newHeight = $cords[1] * $newWidth / $cords[0];
         // get extension of file
         $extension = pathinfo($path, PATHINFO_EXTENSION);
@@ -369,11 +369,11 @@ function send_mail($email, $subject, $html, $reply_info = false)
     $mail->SMTPAuth = true;
     $mail->SMTPSecure = "tls";
     $mail->Port = "587";
-    $mail->Username = "lazarevicfilip22@gmail.com"; //env("PHPMAILER_MAIL");
-    $mail->Password = "plaviflomaster99";
+    $mail->Username = "djeventsapp@gmail.com"; //env("PHPMAILER_MAIL");
+    $mail->Password = "djevents123!";
 
     $mail->Subject = $subject;
-    $mail->setFrom("lazarevicfilip22@gmail.com");
+    $mail->setFrom("djeventsapp@gmail.com");
     $mail->isHTML(true);
     $mail->Body = $html;
     $mail->addAddress($email);

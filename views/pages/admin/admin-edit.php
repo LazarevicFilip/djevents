@@ -83,14 +83,24 @@ if (isset($_GET["id"])) {
                     <textarea name="" id="taDesc" class="form-control" cols="20" rows="6"><?= $singleEvent->opis ?></textarea>
                     <small class="form-text text-danger hide">Opis eventa je obavezan.</small>
                 </div>
+                <div class="form-row mb-4 align-items-center">
                 <div class="form-group col-md-6 mb-4">
                     <label for="imgPost">Slika Eventa</label>
                     <input type="file" id="file" class="form-control-file">
                     <small class="form-text text-danger hide">Morate izabrati sliku eventa.</small>
                 </div>
+                <div class="form-group col-md-2">
+                        <label for="eventPrice">Cena karte</label>
+                        <input type="text" id="eventPrice" value="<?=$singleEvent->cena?>.00" class="form-control" placeholder="Primer - 990.00">
+                        <small class="form-text text-danger hide">Cena je u neodgovarajucem formatu.</small>
+                    </div>
+            
+         
+                </div>
+               
                 <input type="button" id="btnInsert" class=" btn btn-purple w-100" value="Potvrdi" />
             </form>
-            <div id="message"></div>
+            <div id="msg"></div>
         </div>
     </div>
 </div>

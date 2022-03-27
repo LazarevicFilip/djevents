@@ -37,7 +37,7 @@ $pages = countPages("countEvents");
         ?>
             <div class="col-md-12 item d-flex justify-content-between align-items-center w-100">
                 <div class="item-img w-30">
-                    <img src="<?= $dir . $event->putanja ?>" width="200px" alt="">
+                    <img src="<?= $dir . $event->putanja ?>" alt="<?= $event->ime?>">
                 </div>
                 <div class="item-info text-center">
                     <p><?= $event->datum . " " . $event->vreme ?></p>

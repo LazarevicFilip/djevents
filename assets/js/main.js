@@ -429,22 +429,26 @@ $(document).ready(function () {
             </div></div>
             `;
         }
-       if(cart.textContent != "Korpa(0)"){
+    
+       if(cart.textContent.trim() != "Korpa(0)"){
         output += `<div class="mt-4 mb-5"><a href="" class="btn btn-purple w-100">Zavrsi kupovinu</a></div>`
        }
         // print items
         cartItems.innerHTML = output;
     }
+ 
     // event is in global scope because user can delete item from cart from any page
-    korpa.addEventListener("click",(e)=>{
-        if(e.target.classList.contains("deleteItemCart")){
-             e.preventDefault();
-             let data = {
-                 id : e.target.dataset.id
-             }
-             fetchAjax("models/user/removeFromCart.php", "POST", printCartItems, "", errPrint, data);
-        }
-     })
+     if(page.indexOf("admin") == -1){
+        korpa.addEventListener("click",(e)=>{
+            if(e.target.classList.contains("deleteItemCart")){
+                 e.preventDefault();
+                 let data = {
+                     id : e.target.dataset.id
+                 }
+                 fetchAjax("models/user/removeFromCart.php", "POST", printCartItems, "", errPrint, data);
+            }
+         });
+    }
     if(page == "?page=admin-select"){
         $(document).on("click",".page-link",function(e){
             e.preventDefault();
