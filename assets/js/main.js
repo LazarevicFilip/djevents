@@ -18,7 +18,7 @@ $(document).ready(function () {
     var page = window.location.search;
     
     //show ham menu on all pages except admin page
-    if(page.indexOf("admin") == -1){
+    if(page.indexOf("admin") == -1 && page.indexOf("order") == -1){
         menuToggle();
         cartToggle();
     }
@@ -431,7 +431,7 @@ $(document).ready(function () {
         }
     
        if(cart.textContent.trim() != "Korpa(0)"){
-        output += `<div class="mt-4 mb-5"><a href="" class="btn btn-purple w-100">Zavrsi kupovinu</a></div>`
+        output += `<div class="mt-4 mb-5"><a href="index.php?page=order" class="btn btn-purple w-100">Zavrsi kupovinu</a></div>`
        }
         // print items
         cartItems.innerHTML = output;
@@ -449,6 +449,18 @@ $(document).ready(function () {
             }
          });
     }
+     if(page.indexOf("?page=order") != -1){
+         let quantity = document.querySelectorAll(".cartQuantity");
+         let price = document.querySelectorAll(".cartPrice");
+         let delivery = document.querySelector(".delivery");
+         let sum = 0;
+         for(var i = 0; i < quantity.length; i++){
+             sum += parseInt(quantity[i].textContent) * parseInt(price[i].textContent);
+         }
+         sum += parseInt(delivery.textContent);
+         sumPrice.textContent = sum;
+         priceOrder.value = sum;
+     }
     if(page == "?page=admin-select"){
         $(document).on("click",".page-link",function(e){
             e.preventDefault();

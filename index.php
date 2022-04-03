@@ -30,6 +30,9 @@ if (!isset($_GET["page"])) {
         case "author":
             include "views/pages/author.php";
             break;
+        case "order":
+            include "views/pages/order.php";
+            break;
         case "admin":
             include "views/fixed/admin/sidebar.php";
             include "views/pages/admin/admin.php";

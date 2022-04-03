@@ -69,19 +69,25 @@ if (isset($_SESSION["user"])) {
                         <?php
                         endif
                         ?>
+                        <?php
+                        if(isset($_GET["page"]) && $_GET["page"] != "order"):
+                        ?>
                         <span id="cart" class="mr-3 text-uppercase cart">
                             <?php
                             if (isset($_SESSION["cart"])) :
-                            ?>
+                                ?>
                                 Korpa(<?= count($_SESSION["cart"]) ?>)
                             <?php
                             else :
-                            ?>
+                                ?>
                                 Korpa(0)
                             <?php
                             endif;
                             ?>
                         </span>
+                        <?php
+                        endif;
+                        ?>
                     </div>
                 </div>
             </div>

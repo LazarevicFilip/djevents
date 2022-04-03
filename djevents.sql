@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2022 at 09:37 PM
+-- Generation Time: Apr 03, 2022 at 06:28 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -194,7 +194,8 @@ CREATE TABLE `korisnici` (
 INSERT INTO `korisnici` (`id_korisnik`, `ime`, `prezime`, `email`, `lozinka`, `status`, `uloga`, `vreme_registracije`, `recovery_key`) VALUES
 (4, 'Marko', 'Markovic', 'marko@gamil.com', '2e6c740729c44c12663c973965cbf698', 1, 2, 2147483647, NULL),
 (5, 'Nikola', 'Nikolic', 'nikola@gmail.com', 'e8f8b0cf7e6f4267e0bce864db0ac20c', 1, 1, 1559, NULL),
-(6, 'Test', 'Test', 'djeventsapp@gmail.com', '2c9341ca4cf3d87b9e4eb905d6a3ec45', 1, 2, 2147483647, NULL);
+(6, 'Test', 'Test', 'djeventsapp@gmail.com', '2c9341ca4cf3d87b9e4eb905d6a3ec45', 1, 2, 2147483647, NULL),
+(7, 'Filip', 'Lazarevic', 'lazarevicfilip22@yahoo.com', '03247e64745eef2327713e1da3242629', 1, 2, 2147483647, NULL);
 
 -- --------------------------------------------------------
 
@@ -220,6 +221,62 @@ INSERT INTO `meni` (`id_meni`, `naziv`, `putanja`, `prikaz_nav`) VALUES
 (4, 'Dodaj dogadjaj', '?page=admin-insert', 4),
 (5, 'Svi dogadjaji', '?page=admin-select', 4),
 (6, 'Svi korisnici', '?page=admin-users', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `porudzbine`
+--
+
+CREATE TABLE `porudzbine` (
+  `id_porudzbina` int(100) NOT NULL,
+  `id_korisnik` int(100) NOT NULL,
+  `ime` varchar(50) NOT NULL,
+  `prezime` varchar(80) NOT NULL,
+  `adresa` varchar(100) NOT NULL,
+  `telefon` varchar(20) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `postanski_broj` varchar(10) NOT NULL,
+  `cena` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `porudzbine`
+--
+
+INSERT INTO `porudzbine` (`id_porudzbina`, `id_korisnik`, `ime`, `prezime`, `adresa`, `telefon`, `email`, `postanski_broj`, `cena`) VALUES
+(35, 7, 'Filip', 'Lazarevic', 'Zarkoa Zrenjanine 22', '+38166465798', 'lazarevicfilip22@yahoo.com', '26000', 1299),
+(36, 7, 'Filip', 'Lazarevic', 'Kraljevacka 22', '+3816621111', 'lazarevicfilip22@yahoo.com', '26001', 1500),
+(37, 7, 'Filip', 'Lazarevic', 'Vrsacka 22', '+38166214111', 'lazarevicfilip22@yahoo.com', '11000', 799),
+(38, 7, 'Filip', 'Lazarevic', 'Zarkoa Zrenjanine 22', '+38166214999', 'lazarevicfilip22@yahoo.com', '26001', 800),
+(39, 7, 'Martko', 'Markovic', 'Kraljevacka 22', '+38166214999', 'lazarevicfilip22@yahoo.com', '26000', 2400);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stavke_porudzbine`
+--
+
+CREATE TABLE `stavke_porudzbine` (
+  `id_stavka_porudzbine` int(255) NOT NULL,
+  `id_porudzbina` int(100) NOT NULL,
+  `naziv` varchar(50) NOT NULL,
+  `kolicina` smallint(20) NOT NULL,
+  `cena` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `stavke_porudzbine`
+--
+
+INSERT INTO `stavke_porudzbine` (`id_stavka_porudzbine`, `id_porudzbina`, `naziv`, `kolicina`, `cena`) VALUES
+(21, 35, 'Moly Party', 1, 499),
+(22, 35, 'Soul Free', 1, 500),
+(23, 36, 'Electric Party', 3, 400),
+(24, 37, 'Moly Party', 1, 499),
+(25, 38, 'Soul Free', 1, 500),
+(26, 39, 'Soul Free', 1, 500),
+(27, 39, 'LOL', 2, 800);
 
 -- --------------------------------------------------------
 
@@ -294,6 +351,20 @@ ALTER TABLE `meni`
   ADD PRIMARY KEY (`id_meni`);
 
 --
+-- Indexes for table `porudzbine`
+--
+ALTER TABLE `porudzbine`
+  ADD PRIMARY KEY (`id_porudzbina`),
+  ADD KEY `id_korisnik` (`id_korisnik`);
+
+--
+-- Indexes for table `stavke_porudzbine`
+--
+ALTER TABLE `stavke_porudzbine`
+  ADD PRIMARY KEY (`id_stavka_porudzbine`),
+  ADD KEY `id_porudzbina` (`id_porudzbina`);
+
+--
 -- Indexes for table `uloge`
 --
 ALTER TABLE `uloge`
@@ -338,13 +409,25 @@ ALTER TABLE `izvodjaci`
 -- AUTO_INCREMENT for table `korisnici`
 --
 ALTER TABLE `korisnici`
-  MODIFY `id_korisnik` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_korisnik` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `meni`
 --
 ALTER TABLE `meni`
   MODIFY `id_meni` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `porudzbine`
+--
+ALTER TABLE `porudzbine`
+  MODIFY `id_porudzbina` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+
+--
+-- AUTO_INCREMENT for table `stavke_porudzbine`
+--
+ALTER TABLE `stavke_porudzbine`
+  MODIFY `id_stavka_porudzbine` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `uloge`
@@ -375,6 +458,18 @@ ALTER TABLE `event_izvodjac`
 --
 ALTER TABLE `korisnici`
   ADD CONSTRAINT `korisnici_ibfk_1` FOREIGN KEY (`uloga`) REFERENCES `uloge` (`id_uloge`);
+
+--
+-- Constraints for table `porudzbine`
+--
+ALTER TABLE `porudzbine`
+  ADD CONSTRAINT `porudzbine_ibfk_1` FOREIGN KEY (`id_korisnik`) REFERENCES `korisnici` (`id_korisnik`);
+
+--
+-- Constraints for table `stavke_porudzbine`
+--
+ALTER TABLE `stavke_porudzbine`
+  ADD CONSTRAINT `stavke_porudzbine_ibfk_1` FOREIGN KEY (`id_porudzbina`) REFERENCES `porudzbine` (`id_porudzbina`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

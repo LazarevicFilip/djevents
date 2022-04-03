@@ -257,6 +257,18 @@ function getRecoverKey($id)
     $result = $select->fetch();
     return $result;
 }
+function insertOrder($fname,$lname,$street,$postalCode,$email,$phone,$userID,$price){
+    global $conn;
+    $query = "INSERT INTO porudzbine (id_korisnik,ime,prezime,adresa,telefon,email,postanski_broj,cena) VALUES (?,?,?,?,?,?,?,?)";
+    $statement = $conn->prepare($query);
+    return $statement->execute([$userID,$fname,$lname,$street,$phone,$email,$postalCode,$price]);
+}
+function insertOrderDetails($orderID,$name,$quantity,$price){
+    global $conn;
+    $query = "INSERT INTO stavke_porudzbine(id_porudzbina,naziv,kolicina,cena) VALUES(?,?,?,?)";
+    $statement = $conn->prepare($query);
+    return $statement->execute([$orderID,$name,$quantity,$price]);
+}
 function imgResize($fileName, $tmpFIle)
 {
     // change image name
@@ -358,6 +370,14 @@ function lock_account($user)
         return false;
         logAction(LOG_ERR_FAJL, $exception->getMessage());
     }
+}
+function success_order($user){
+    $subject = "Uspesno ste kreirali porudzbinu.";
+    $html = "
+        <h2>Postovani $user->ime,</h2>
+        <h3>Uspesno ste napravili porudzbinu.Rok za isporuku je 7 dana od ovog dana.</h3>
+    ";
+    send_mail($user->email,$subject,$html);
 }
 function send_mail($email, $subject, $html, $reply_info = false)
 {

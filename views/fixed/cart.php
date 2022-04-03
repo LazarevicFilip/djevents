@@ -32,7 +32,7 @@
                 endforeach;
                 ?>
                 <div class="mt-4 mb-5">
-               <a href="" class="btn btn-purple w-100">Zavrsi kupovinu</a>
+               <a href="index.php?page=order" class="btn btn-purple w-100">Zavrsi kupovinu</a>
                     <!-- <div class="d-flex justify-content-between mb-3 text-white size-small py-2">
                 <p>Dostava</p>
                 <p>+199 RSD</p>
